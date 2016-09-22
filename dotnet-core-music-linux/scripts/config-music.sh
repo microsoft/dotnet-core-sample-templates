@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install -y dotnet-dev-1.0.0-preview2-003121
 
 # download application
-sudo wget https://raw.github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/music-app/music-store-azure-demo-pub.tar /
+sudo wget https://raw.github.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/music-app/music-store-azure-demo-pub.tar /
 sudo mkdir /opt/music
 sudo tar -xf music-store-azure-demo-pub.tar -C /opt/music
 
