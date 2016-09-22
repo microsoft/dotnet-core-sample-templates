@@ -3,16 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sshKeyData": {
-            "value": "GEN-SSH-PUB-KEY"
+            "value": "sshkey"
         },
         "adminUsername": {
             "value": "adminuser"
         },
         "publicipaddressDnsName": {
-            "value": "GEN-UNIQUE-13"
+            "value": "dnsname"
         },
         "sqlAdminPassword": {
-            "value": "GEN-PASSWORD"
+            "value": "password"
         }
     }
 }

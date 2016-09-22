@@ -35,13 +35,6 @@
       "metadata": {
         "description": "Globally unique DNS Name for the Public IP used to access the Virtual Machine."
       }
-    },
-    "fileUris": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/dotnet-core-music-linux",
-      "metadata": {
-        "description": "The uri list of files. Split by a space."
-      }
     }
   },
   "variables": {
@@ -68,9 +61,7 @@
     "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
     "networkSecurityGroup": "NetworkSecurityGroup",
     "musicStoreSqlName": "[concat('sql', uniqueString(resourceGroup().id))]",
-    "sshKeyPath": "[concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]",
-    "scripttestScriptFolder": "scripts",
-    "scripttestScriptFileName": "config-music.sh"
+    "sshKeyPath": "[concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]"
   },
 
   "resources": [
@@ -315,8 +306,8 @@
       },
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', variables('vhdStorageName'))]",
-        "nicLoop",
-        "[concat('Microsoft.Compute/availabilitySets/', variables('availabilitySetName'))]"
+        "[concat('Microsoft.Compute/availabilitySets/', variables('availabilitySetName'))]",
+        "nicLoop"
       ],
       "properties": {
         "availabilitySet": {
@@ -383,11 +374,11 @@
             "autoUpgradeMinorVersion": true,
             "settings": {
               "fileUris": [
-                "[concat(parameters('fileUris'), '/', variables('scripttestScriptFolder'), '/', variables('scripttestScriptFileName'))]"
-              ]              
+                "https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"
+              ]
             },
             "protectedSettings": {
-              "commandToExecute": "[concat('sudo sh ', variables('scripttestScriptFileName'), ' ', variables('musicStoreSqlName'), ' ', parameters('adminUsername'), ' ', parameters('sqlAdminPassword'))]"
+              "commandToExecute": "[concat('sudo sh config-music.sh ',variables('musicStoreSqlName'), ' ', parameters('adminUsername'), ' ', parameters('sqlAdminPassword'))]"
             }
           }
         }

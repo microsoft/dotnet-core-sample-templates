@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install -y dotnet-dev-1.0.0-preview2-003121
 
 # download application
-sudo wget https://raw.github.com/neilpeterson/nepeters-azure-templates/master/dotnet-core-music-linux-vm-sql-db/music-app/music-store-azure-demo-pub.tar /
+sudo wget https://raw.github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/music-app/music-store-azure-demo-pub.tar /
 sudo mkdir /opt/music
 sudo tar -xf music-store-azure-demo-pub.tar -C /opt/music
 
@@ -15,7 +15,7 @@ sudo tar -xf music-store-azure-demo-pub.tar -C /opt/music
 sudo apt-get install -y nginx
 sudo service nginx start
 sudo touch /etc/nginx/sites-available/default
-sudo wget https://raw.githubusercontent.com/neilpeterson/nepeters-azure-templates/master/dotnet-core-music-linux-vm-sql-db/music-app/nginx-config/default -O /etc/nginx/sites-available/default
+sudo wget https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/music-app/nginx-config/default -O /etc/nginx/sites-available/default
 sudo cp /opt/music/nginx-config/default /etc/nginx/sites-available/
 sudo nginx -s reload
 
@@ -29,7 +29,7 @@ sudo chmod 0400 /opt/music/config.json
 # config supervisor
 sudo apt-get install -y supervisor
 sudo touch /etc/supervisor/conf.d/music.conf
-sudo wget https://raw.githubusercontent.com/neilpeterson/nepeters-azure-templates/master/dotnet-core-music-linux-vm-sql-db/music-app/supervisor/music.conf -O /etc/supervisor/conf.d/music.conf
+sudo wget https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/music-app/supervisor/music.conf -O /etc/supervisor/conf.d/music.conf
 sudo service supervisor stop
 sudo service supervisor start
 
