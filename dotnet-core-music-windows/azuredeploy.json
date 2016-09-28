@@ -44,7 +44,7 @@
     "networkInterfaceName": "NetworkInterface",
     "publicIpAddressName": "PublicIp",
     "ipConfigID": "[concat(variables('lbID'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]",
-    "loadBalancerName": "load-balancer-front",
+    "loadBalancerName": "LoadBalancer",
     "loadBalencerRule": "HTTP",
     "lbBackEndPool": "lbBackEndPool",
     "lbId": "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancerName'))]",
@@ -356,7 +356,9 @@
             "settings": {
               "fileUris": [
                 "https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1"
-              ],
+              ]
+            },
+            "protectedSettings": {
               "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 -user ',parameters('adminUsername'),' -password ',parameters('adminPassword'),' -sqlserver ',variables('musicstoresqlName'),'.database.windows.net')]"
             }
           }
