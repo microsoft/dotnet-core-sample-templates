@@ -33,7 +33,7 @@
     "vmSize": "Standard_D1",
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
-    "windowsOSVersion": "Windows-Server-Technical-Preview",
+    "windowsOSVersion": "2016-Datacenter",
     "vhdStorageType": "Standard_LRS",
     "vhdStorageName": "[concat('vhdstorage', uniqueString(resourceGroup().id))]",
     "availabilitySetName": "AvalibilitySet",
