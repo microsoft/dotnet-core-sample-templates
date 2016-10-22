@@ -1,10 +1,3 @@
-<#
-.SYNOPSIS
-.DESCRIPTION
-.PARAMETER Alias
-.EXAMPLE
-#>
-
 Param (
     [string]$user,
     [string]$password,
