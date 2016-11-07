@@ -1,7 +1,6 @@
 <#
     .SYNOPSIS
-        Downloads and configures .Net Core Music Store application sample across IIS and Azure SQL DB.
-    
+        Downloads and configures .Net Core Music Store application sample across IIS and Azure SQL DB.    
 #>
 
 Param (
