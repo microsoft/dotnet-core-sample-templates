@@ -39,7 +39,7 @@
   },
   "variables": {
     "vmName": "MusicApp",
-    "vmSize": "Standard_D1",
+    "vmSize": "Standard_D1_v2",
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
     "ubuntuOSVersion": "14.04.2-LTS",
