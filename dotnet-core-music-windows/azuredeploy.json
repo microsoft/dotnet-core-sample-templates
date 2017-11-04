@@ -30,7 +30,7 @@
   },
   "variables": {
     "vmName": "MusicApp",
-    "vmSize": "Standard_D1",
+    "vmSize": "Standard_D1_v2",
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
     "windowsOSVersion": "2016-Datacenter",
