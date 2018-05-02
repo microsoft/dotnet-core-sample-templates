@@ -28,6 +28,8 @@ sed -i "s/<replacepass>/$3/g" /opt/music/config.json
 #sudo chmod 0400 /opt/music/config.json
 
 # config supervisor
+sudo add-apt-repository universe
+sudo apt-get update
 sudo apt-get install -y supervisor
 sudo touch /etc/supervisor/conf.d/music.conf
 sudo wget https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/music-app/supervisor/music.conf -O /etc/supervisor/conf.d/music.conf
