@@ -342,8 +342,7 @@
           "name": "config-app",
           "location": "[resourceGroup().location]",
           "dependsOn": [
-            "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'),copyindex())]",
-            "[variables('musicstoresqlName')]"
+            "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'),copyindex())]"
           ],
           "tags": {
             "displayName": "config-app"
